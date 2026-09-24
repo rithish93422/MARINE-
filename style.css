@@ -114,3 +114,146 @@ h1 span {
         font-size: 17px;
     }
 }
+/* =========================
+   BOAT REGISTRATION PAGE
+========================= */
+
+.register-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #0b4568,
+            transparent 45%
+        ),
+        #06121f;
+}
+
+.register-card {
+    width: 430px;
+
+    padding: 40px;
+
+    background: #0b1d2b;
+
+    border: 1px solid #183b50;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.boat-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.register-card h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.register-card p {
+    color: #91a9b9;
+    line-height: 1.5;
+    margin-bottom: 28px;
+}
+
+.register-card label {
+    display: block;
+
+    color: #b9cbd6;
+
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+.register-card input {
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 8px;
+
+    border: 1px solid #294454;
+
+    background: #071521;
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.register-card input:focus {
+    border-color: #38c7ff;
+}
+
+.register-card button {
+    width: 100%;
+
+    margin-top: 28px;
+
+    padding: 15px;
+
+    background: #12aee8;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.register-card button:hover {
+    background: #078bc0;
+}
+
+.back {
+    display: block;
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #6fcfff;
+
+    text-decoration: none;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+    .register-page {
+        padding: 15px;
+    }
+
+    .register-card {
+        width: 100%;
+        padding: 28px;
+    }
+
+    .register-card h1 {
+        font-size: 28px;
+    }
+}
