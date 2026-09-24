@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Boat Tracking | MarineLoRa</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Leaflet Map -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+</head>
+
+<body>
+
+    <nav>
+
+        <h2> MarineLoRa</h2>
+
+        <span>Boat Tracking System</span>
+
+    </nav>
+
+
+    <main class="tracking-page">
+
+        <div class="tracking-header">
+
+            <div>
+
+                <div class="badge">
+                     LIVE BOAT TRACKING
+                </div>
+
+                <h1>
+                    Marine GPS <span>Tracking</span>
+                </h1>
+
+            </div>
+
+            <div class="status">
+                🟢 LoRa Connected
+            </div>
+
+        </div>
+
+
+        <div class="tracking-grid">
+
+
+            <!-- BOAT INFORMATION -->
+
+            <div class="boat-info">
+
+                <h2>🚤 Boat Information</h2>
+
+                <div class="info-box">
+
+                    <span>Boat Name</span>
+
+                    <strong id="displayBoatName">
+                        Loading...
+                    </strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <span>Boat Number</span>
+
+                    <strong id="displayBoatNumber">
+                        Loading...
+                    </strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <span>LoRa Device ID</span>
+
+                    <strong id="displayLoraId">
+                        Loading...
+                    </strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <span>Communication</span>
+
+                    <strong>
+                        📡 LoRa
+                    </strong>
+
+                </div>
+
+
+                <div class="gps-data">
+
+                    <h3>GPS Location</h3>
+
+                    <p>
+                        Latitude:
+                        <strong id="latitude">
+                            11.0168
+                        </strong>
+                    </p>
+
+                    <p>
+                        Longitude:
+                        <strong id="longitude">
+                            76.9558
+                        </strong>
+                    </p>
+
+                </div>
+
+
+                <a href="register.html" class="button">
+                    REGISTER ANOTHER BOAT
+                </a>
+
+            </div>
+
+
+            <!-- MAP -->
+
+            <div class="map-container">
+
+                <div id="map"></div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Leaflet JavaScript -->
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+
+    <script>
+
+        // Get boat information
+
+        const boatName =
+            localStorage.getItem("boatName");
+
+        const boatNumber =
+            localStorage.getItem("boatNumber");
+
+        const loraId =
+            localStorage.getItem("loraId");
+
+
+        // Display information
+
+        document.getElementById("displayBoatName").textContent =
+            boatName || "Unknown Boat";
+
+        document.getElementById("displayBoatNumber").textContent =
+            boatNumber || "Unknown";
+
+        document.getElementById("displayLoraId").textContent =
+            loraId || "Unknown";
+
+
+        // Temporary GPS location
+
+        const latitude = 11.0168;
+
+        const longitude = 76.9558;
+
+
+        // Display GPS
+
+        document.getElementById("latitude").textContent =
+            latitude;
+
+        document.getElementById("longitude").textContent =
+            longitude;
+
+
+        // Create map
+
+        const map = L.map("map").setView(
+            [latitude, longitude],
+            13
+        );
+
+
+        // OpenStreetMap
+
+        L.tileLayer(
+            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            {
+                attribution:
+                    "&copy; OpenStreetMap contributors"
+            }
+        ).addTo(map);
+
+
+        // Boat marker
+
+        const marker = L.marker(
+            [latitude, longitude]
+        ).addTo(map);
+
+
+        // Popup
+
+        marker.bindPopup(
+
+            `<b>🚤 ${boatName || "Boat"}</b><br>
+             Boat No: ${boatNumber || "Unknown"}<br>
+             LoRa ID: ${loraId || "Unknown"}<br>
+             📡 LoRa Connected`
+
+        ).openPopup();
+
+
+    </script>
+
+</body>
+
+</html>
