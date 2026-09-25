@@ -397,3 +397,46 @@ h1 span {
     }
 
 }
+/* =========================
+   VERIFICATION CODE
+========================= */
+
+.verification-box {
+    margin-top: 20px;
+    padding: 20px;
+
+    background: #071521;
+
+    border: 1px solid #38c7ff;
+
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+.verification-box h3 {
+    color: #38c7ff;
+    margin-bottom: 10px;
+}
+
+.verification-box p {
+    margin-bottom: 12px;
+}
+
+.verification-code {
+    font-size: 32px;
+
+    font-weight: bold;
+
+    letter-spacing: 8px;
+
+    color: #ffffff;
+
+    background: #0b2d40;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    margin: 15px 0;
+}
