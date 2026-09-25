@@ -1,115 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<label>Owner Phone Number</label>
 
-    <title>Register Boat | MarineLoRa</title>
+<div class="phone-input">
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    <span>+91</span>
 
-<body>
+    <input
+        type="tel"
+        id="phoneNumber"
+        placeholder="Enter 10-digit mobile number"
+        maxlength="10"
+    >
 
-    <div class="register-page">
+</div>
 
-        <div class="register-card">
-
-            <h1>Register Your Boat</h1>
-
-            <p>
-                Connect your boat to the Marine LoRa
-                communication network.
-            </p>
-
-            <label>Boat Name</label>
-
-            <input
-                type="text"
-                id="boatName"
-                placeholder="Enter boat name"
-            >
-
-            <label>Boat Number</label>
-
-            <input
-                type="text"
-                id="boatNumber"
-                placeholder="Example: TN-37-AB-1234"
-            >
-
-            <label>LoRa Device ID</label>
-
-            <input
-                type="text"
-                id="loraId"
-                placeholder="Example: LORA-001"
-            >
-
-            <button onclick="registerBoat()">
-                REGISTER BOAT →
-            </button>
-
-            <a href="index.html" class="back">
-                ← Back to Home
-            </a>
-
-        </div>
-
-    </div>
+<button onclick="sendOTP()">
+    SEND OTP
+</button>
 
 
-    <script>
+<div id="otpSection" style="display:none;">
 
-        function registerBoat() {
+    <label>Enter OTP</label>
 
-            const boatName =
-                document.getElementById("boatName").value;
+    <input
+        type="text"
+        id="otp"
+        placeholder="Enter 6-digit OTP"
+        maxlength="6"
+    >
 
-            const boatNumber =
-                document.getElementById("boatNumber").value;
+    <button onclick="verifyOTP()">
+         VERIFY OTP
+    </button>
 
-            const loraId =
-                document.getElementById("loraId").value;
-
-
-            if (
-                boatName === "" ||
-                boatNumber === "" ||
-                loraId === ""
-            ) {
-
-                alert("Please fill all the details.");
-
-                return;
-            }
-
-
-            // Store boat details temporarily
-
-            localStorage.setItem(
-                "boatName",
-                boatName
-            );
-
-            localStorage.setItem(
-                "boatNumber",
-                boatNumber
-            );
-
-            localStorage.setItem(
-                "loraId",
-                loraId
-            );
-
-
-            // Go to tracking page
-
-            window.location.href =
-                "tracking.html";
-        }
-
-    </script>
-
-</body>
-</html>
+</div>
