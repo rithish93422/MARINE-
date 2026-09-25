@@ -1,36 +1,20 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #06121f;
-    color: white;
-}
-
-nav {
-    height: 75px;
-    padding: 0 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #081a29;
-    border-bottom: 1px solid #18384d;
-}
-
-nav h2 {
-    color: #39c6ff;
-}
-
-nav span {
-    color: #91a8b7;
-}
+/* =========================
+   MARINE HERO IMAGE
+========================= */
 
 .hero {
     min-height: calc(100vh - 75px);
-    padding: 150px 8%;
+
+    padding: 80px 7%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+
     background:
         radial-gradient(
             circle at 80% 20%,
@@ -40,403 +24,130 @@ nav span {
         #06121f;
 }
 
-.badge {
-    color: #38c7ff;
-    margin-bottom: 25px;
-    font-size: 14px;
-    letter-spacing: 1px;
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
 }
 
-h1 {
-    font-size: 64px;
-    line-height: 1.05;
-}
 
-h1 span {
-    color: #38c7ff;
-}
+.hero-image {
+    position: relative;
 
-.hero p {
-    max-width: 650px;
-    margin: 25px 0;
-    color: #a8bac6;
-    font-size: 19px;
-    line-height: 1.6;
-}
+    width: 100%;
 
-.features {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-bottom: 35px;
-}
+    height: 500px;
 
-.features div {
-    background: #0c2638;
-    padding: 13px 18px;
-    border-radius: 9px;
-    border: 1px solid #173b52;
-}
+    border-radius: 24px;
 
-.button {
-    display: inline-block;
-    background: #12aee8;
-    color: white;
-    padding: 15px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
+    overflow: hidden;
 
-.button:hover {
-    background: #078bc0;
-}
-
-@media (max-width: 700px) {
-
-    nav {
-        padding: 0 5%;
-    }
-
-    nav span {
-        display: none;
-    }
-
-    .hero {
-        padding: 100px 7%;
-    }
-
-    h1 {
-        font-size: 45px;
-    }
-
-    .hero p {
-        font-size: 17px;
-    }
-}
-/* =========================
-   BOAT REGISTRATION PAGE
-========================= */
-
-.register-page {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 30px;
-
-    background:
-        radial-gradient(
-            circle at top,
-            #0b4568,
-            transparent 45%
-        ),
-        #06121f;
-}
-
-.register-card {
-    width: 430px;
-
-    padding: 40px;
-
-    background: #0b1d2b;
-
-    border: 1px solid #183b50;
-
-    border-radius: 18px;
+    border: 1px solid #1d536d;
 
     box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.45);
+        0 25px 70px rgba(0, 0, 0, 0.5);
 }
 
-.boat-icon {
-    font-size: 45px;
-    margin-bottom: 15px;
-}
 
-.register-card h1 {
-    font-size: 32px;
-    margin-bottom: 12px;
-}
-
-.register-card p {
-    color: #91a9b9;
-    line-height: 1.5;
-    margin-bottom: 28px;
-}
-
-.register-card label {
-    display: block;
-
-    color: #b9cbd6;
-
-    margin-top: 18px;
-    margin-bottom: 8px;
-}
-
-.register-card input {
+.hero-image img {
     width: 100%;
 
-    padding: 14px;
-
-    border-radius: 8px;
-
-    border: 1px solid #294454;
-
-    background: #071521;
-
-    color: white;
-
-    font-size: 15px;
-
-    outline: none;
-}
-
-.register-card input:focus {
-    border-color: #38c7ff;
-}
-
-.register-card button {
-    width: 100%;
-
-    margin-top: 28px;
-
-    padding: 15px;
-
-    background: #12aee8;
-
-    color: white;
-
-    border: none;
-
-    border-radius: 8px;
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-.register-card button:hover {
-    background: #078bc0;
-}
-
-.back {
-    display: block;
-
-    text-align: center;
-
-    margin-top: 20px;
-
-    color: #6fcfff;
-
-    text-decoration: none;
-}
-
-.back:hover {
-    text-decoration: underline;
-}
-
-
-/* Mobile */
-
-@media (max-width: 500px) {
-
-    .register-page {
-        padding: 15px;
-    }
-
-    .register-card {
-        width: 100%;
-        padding: 28px;
-    }
-
-    .register-card h1 {
-        font-size: 28px;
-    }
-}
-/* =========================
-   GPS TRACKING PAGE
-========================= */
-
-.tracking-page {
-    min-height: calc(100vh - 75px);
-    padding: 50px 7%;
-    background:
-        radial-gradient(
-            circle at 80% 10%,
-            #0b4568,
-            transparent 35%
-        ),
-        #06121f;
-}
-
-.tracking-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 35px;
-}
-
-.tracking-header h1 {
-    font-size: 45px;
-    margin-top: 10px;
-}
-
-.tracking-header h1 span {
-    color: #38c7ff;
-}
-
-.status {
-    background: #0b2d25;
-    border: 1px solid #1b6651;
-    color: #55e6ad;
-    padding: 12px 18px;
-    border-radius: 8px;
-}
-
-.tracking-grid {
-    display: grid;
-    grid-template-columns: 350px 1fr;
-    gap: 25px;
-}
-
-.boat-info {
-    background: #0b1d2b;
-    border: 1px solid #183b50;
-    border-radius: 16px;
-    padding: 28px;
-}
-
-.boat-info h2 {
-    margin-bottom: 20px;
-}
-
-.info-box {
-    background: #071521;
-    border: 1px solid #18384d;
-    border-radius: 8px;
-    padding: 14px;
-    margin-bottom: 12px;
-}
-
-.info-box span {
-    display: block;
-    color: #8199a8;
-    font-size: 13px;
-    margin-bottom: 5px;
-}
-
-.info-box strong {
-    color: white;
-}
-
-.gps-data {
-    margin-top: 22px;
-    padding: 18px;
-    background: #071521;
-    border-radius: 10px;
-}
-
-.gps-data h3 {
-    color: #38c7ff;
-    margin-bottom: 12px;
-}
-
-.gps-data p {
-    color: #9eb2bf;
-    margin: 8px 0;
-}
-
-.gps-data strong {
-    color: white;
-}
-
-.map-container {
-    min-height: 550px;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid #183b50;
-}
-
-#map {
-    width: 100%;
     height: 100%;
-    min-height: 550px;
-}
 
-.boat-info .button {
+    object-fit: cover;
+
     display: block;
-    text-align: center;
-    margin-top: 25px;
 }
 
 
-/* Mobile */
+/* Dark overlay */
+
+.hero-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 45%,
+            rgba(3, 15, 25, 0.8)
+        );
+
+    pointer-events: none;
+}
+
+
+/* Image information */
+
+.image-overlay {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 20px;
+
+    right: 20px;
+
+    z-index: 2;
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+.image-overlay span {
+
+    padding: 10px 14px;
+
+    border-radius: 8px;
+
+    background: rgba(5, 24, 37, 0.85);
+
+    border: 1px solid #28627d;
+
+    color: #d8f5ff;
+
+    font-size: 13px;
+
+    backdrop-filter: blur(6px);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 850px) {
 
-    .tracking-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
+    .hero {
 
-    .tracking-grid {
         grid-template-columns: 1fr;
+
+        padding: 70px 7%;
+
     }
 
-    .map-container {
-        min-height: 400px;
+
+    .hero-image {
+
+        height: 350px;
+
     }
 
-    #map {
-        min-height: 400px;
+
+    h1 {
+
+        font-size: 48px;
+
     }
 
-}
-/* =========================
-   VERIFICATION CODE
-========================= */
-
-.verification-box {
-    margin-top: 20px;
-    padding: 20px;
-
-    background: #071521;
-
-    border: 1px solid #38c7ff;
-
-    border-radius: 12px;
-
-    text-align: center;
-}
-
-.verification-box h3 {
-    color: #38c7ff;
-    margin-bottom: 10px;
-}
-
-.verification-box p {
-    margin-bottom: 12px;
-}
-
-.verification-code {
-    font-size: 32px;
-
-    font-weight: bold;
-
-    letter-spacing: 8px;
-
-    color: #ffffff;
-
-    background: #0b2d40;
-
-    padding: 15px;
-
-    border-radius: 8px;
-
-    margin: 15px 0;
 }
