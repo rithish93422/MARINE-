@@ -1,153 +1,184 @@
-/* =========================
-   MARINE HERO IMAGE
-========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #08111f;
+    color: white;
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+
+nav {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    background: #07101c;
+    border-bottom: 1px solid #1c3445;
+}
+
+nav h2 {
+    color: #38c7ff;
+    font-size: 24px;
+}
+
+nav span {
+    color: #91a9b9;
+    font-size: 14px;
+}
+
+/* HERO */
 
 .hero {
     min-height: calc(100vh - 75px);
-
-    padding: 80px 7%;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 60px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
+
+    padding: 60px 20px;
 
     background:
         radial-gradient(
-            circle at 80% 20%,
-            #0b4568,
-            transparent 35%
+            circle at 80% 40%,
+            rgba(0, 166, 255, 0.18),
+            transparent 40%
         ),
-        #06121f;
+        #08111f;
 }
 
+/* BADGE */
 
-.hero-content {
-    position: relative;
+.badge {
+    display: inline-block;
 
-    z-index: 2;
+    padding: 8px 16px;
+
+    border: 1px solid #38c7ff;
+    border-radius: 30px;
+
+    color: #38c7ff;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 25px;
 }
 
+/* HEADING */
 
-.hero-image {
-    position: relative;
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.05;
 
-    width: 100%;
+    margin-bottom: 25px;
 
-    height: 500px;
-
-    border-radius: 24px;
-
-    overflow: hidden;
-
-    border: 1px solid #1d536d;
-
-    box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.5);
+    color: white;
 }
 
-
-.hero-image img {
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
+.hero h1 span {
+    color: #38c7ff;
 }
 
+/* DESCRIPTION */
 
-/* Dark overlay */
+.hero p {
+    max-width: 650px;
 
-.hero-image::after {
+    color: #91a9b9;
 
-    content: "";
+    font-size: 18px;
+    line-height: 1.6;
 
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent 45%,
-            rgba(3, 15, 25, 0.8)
-        );
-
-    pointer-events: none;
+    margin-bottom: 35px;
 }
 
+/* FEATURES */
 
-/* Image information */
-
-.image-overlay {
-
-    position: absolute;
-
-    bottom: 20px;
-
-    left: 20px;
-
-    right: 20px;
-
-    z-index: 2;
-
+.features {
     display: flex;
 
-    gap: 10px;
+    gap: 15px;
 
-    flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
+.features div {
+    padding: 12px 18px;
 
-.image-overlay span {
+    border: 1px solid #294454;
 
-    padding: 10px 14px;
+    border-radius: 10px;
 
-    border-radius: 8px;
+    background: #0b1b2a;
 
-    background: rgba(5, 24, 37, 0.85);
+    color: #c8d8e5;
 
-    border: 1px solid #28627d;
-
-    color: #d8f5ff;
-
-    font-size: 13px;
-
-    backdrop-filter: blur(6px);
+    font-size: 14px;
 }
 
+/* BUTTON */
 
-/* =========================
-   MOBILE
-========================= */
+.button {
+    display: inline-block;
 
-@media (max-width: 850px) {
+    padding: 15px 32px;
 
-    .hero {
+    border-radius: 10px;
 
-        grid-template-columns: 1fr;
+    background: #38c7ff;
 
-        padding: 70px 7%;
+    color: #06111c;
 
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+
+    background: #72d8ff;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 0 5%;
     }
 
-
-    .hero-image {
-
-        height: 350px;
-
+    nav span {
+        display: none;
     }
 
-
-    h1 {
-
-        font-size: 48px;
-
+    .hero h1 {
+        font-size: 42px;
     }
 
+    .hero p {
+        font-size: 16px;
+    }
+
+    .features {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .features div {
+        width: 100%;
+    }
 }
